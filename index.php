@@ -173,7 +173,7 @@ require_once 'lib/database_class.php';
 
 
       <!-- Information bar on the right. See the amount of databases, tables,
-      columns and rows in numbers.-->
+      columns and rows in numbers -->
       <aside class='aside' id='statistic'>
           <table>
             <tr>
