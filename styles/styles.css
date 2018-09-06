@@ -1,0 +1,465 @@
+
+/* Samuli Rukkila l4924(at)student.jamk.fi */
+
+
+/*
+|==============================================================================|
+|======================     GENERAL SETTINGS    ===============================|
+|==============================================================================|
+*/
+
+/* Couple of safe fonts and re-configure some settings */
+html, body {
+  font-family: Arial, Sans-serif, Monospace;
+  margin: 0; padding: 0;
+  background-color: #3a608c;
+  height: 100%;
+  overflow-y: hidden;
+}
+
+/* Different color schemes for submit buttons */
+
+  input[type=submit] {
+    border: none;
+    border-radius: 3px;
+    color: white;
+  }
+
+  input[type=submit]:hover { color: black; }
+
+  .dark_blue { background-color: #4b4895 !important; }
+    .dark_blue:hover { background-color: #f5d0d0 !important; }
+
+  .blue { background-color: #6162af !important; }
+    .blue:hover { background-color: #85b0db !important; }
+
+  .red { background-color: #e43434 !important; }
+    .red:hover { background-color: #ff9e9e !important; }
+
+  .dark_red { background-color: #d91f1f !important; }
+    .dark_red:hover { background-color: #f5d0d0 !important; }
+
+  .ivory { background-color: #3d7287 !important; }
+    .ivory:hover { background-color: #70a7be !important; }
+
+  .gray { background-color: #b5bbb1 !important; }
+
+/*
+|==============================================================================|
+|==========================     HEADER (TOP)   ================================|
+|==============================================================================|
+*/
+
+/* Settings for the header */
+header {
+  padding: 25px 0 10px 15px;
+  background-color: #8987d0;
+  border-bottom: solid;
+  margin-top: -25px;
+  position: relative;
+  height: 78px;
+}
+  header h1 {
+    font-size: 25px;
+  }
+
+  /* The area around the title */
+  #title_area {
+    border-right: 3px solid black;
+    margin: -30px 0px -20px -15px;
+    width: 307px;
+    height: 78px;
+    padding: 40px 0 0 13px;
+    background-color: #8181b4;
+  }
+
+  /* Message area where errors, when occured, will be shown */
+  .error_top_area  {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border-radius: 3px;
+    padding: 10px 4px 3px 13px;
+    position: absolute;
+    height: 55px;
+    left: 333px; top: 35px; right: 406px;
+    line-height: 1.4em;
+  }
+    /* When there is error message */
+    .error_top_area#error_active {
+      background-color: #de4949;
+      color: white;
+    }
+    /* When there isn't error message */
+    .error_top_area#error_unactive {
+        background-color: #7d7db8;
+        color: white;
+    }
+    /* Little 'X' area to hide the current error */
+    #dismiss_error_form {
+      position: absolute;
+      top: 1.7em; left: 93.7em;
+    }
+    /* Modify the error submit button */
+    #dismiss_error_form input[type=submit] {
+      border: none;
+      padding: 1.5px 4px;
+      border-radius: 15px;
+    }
+
+
+    /* Form to reload the page */
+    .header_buttons #reload {
+      position: absolute;
+      top: 4.7em;
+      right: 17.9em;
+    }
+    /* Form to change error status ON / OFF */
+    .header_buttons #error_status {
+      position: absolute;
+      top: 2.5em;
+      right: 17.9em;
+    }
+    /* Widen the submit buttons */
+    .header_buttons input[type=submit] {
+      width: 100px;
+      padding: 5px;
+    }
+
+
+/*
+|==============================================================================|
+|=======================       NAV (LEFT AREA)    =============================|
+|==============================================================================|
+*/
+
+/* Changes to nav bar */
+nav {
+  overflow-y: auto;
+  overflow-x: auto;
+  width: 320px;
+  float: left;
+  border-right: solid;
+  background-color: #9f9ed9;
+  height: 90%;
+}
+  nav input[type=submit] {
+    width: 60px;
+    padding: 5px 3px;
+  }
+
+  /* Settings for the database classes */
+  .db {
+    border-bottom: 1px solid black;
+    padding: 5px 5px 35px 20px;
+    margin-top: -5px;
+  }
+    .db form {
+      margin-top: 15px;
+      margin-bottom: -5px;
+    }
+    .db input[type=submit] {
+      margin-top: 10px;
+      margin-left: 10px;
+    }
+
+  /* Safe mode background area */
+  #safe_mode {
+    background-color: #8c8bc3;
+    height: 18px;
+    padding: 5px 5px 35px 20px;
+    border-bottom: 1px solid black;
+  }
+    #safe_mode h4 {
+      margin-top: 14px;
+    }
+    #safe_mode form {
+      float: right;
+      margin-top: -40px;
+      margin-right: 15px;
+    }
+    #safe_mode input[type=submit] {
+      margin-left: 15px;
+      padding: 5px;
+    }
+
+  /* Last section in nav without bottom-border */
+  #create_db {
+      border-bottom: none;
+  }
+
+
+/*
+|==============================================================================|
+|=======================     MAIN (MIDDLE AREA)  ==============================|
+|==============================================================================|
+*/
+
+/* Main section, which includes the database printing and search queries */
+main {
+  overflow-y: auto;
+  overflow-x: auto;
+  border: 5px double black;
+  margin: 0.5%;
+  width: 59.5%;
+  height: 83.6%;
+  background-color: #d6e2dd;
+  padding: 5px 10px 25px 20px;
+  float: left;
+}
+
+    /* Search bar in database session */
+    #search_db {
+      float: right;
+      margin: 23px 0 0 0;
+    }
+
+    /* Search bar in search session */
+    #search_search {
+      float: right;
+      margin-top: 3px;
+    }
+
+    /* Settings for the search-button */
+    .search input[type=submit] { padding: 3px 5px; }
+
+    /* Clear-button modifications */
+    #hide_db {
+      margin: 21px 15px 0 0;
+      float: left;
+      padding: 6px 5px;
+      width: 110px;
+    }
+
+    /* Exit from search-button */
+    #hide_search {
+      margin: 1px 15px 0 0;
+      float: left;
+      padding: 6px 5px;
+      width: 110px;
+    }
+
+
+  /* Remove table, column, row etc. submit-button  */
+  .remove { border-radius: 5px !important;  }
+
+
+    /* Three forms below tables. Includes forms to create/delete columns and
+    to update fields. */
+    .below_form {
+      display: inline-block;
+      margin: 10px 40px 0 15px;
+    }
+      /* Personalize select list */
+      .below_form select {
+        padding: 2px;
+        border-radius: 5px;
+      }
+
+      /* Custom submit button */
+      .below_form input[type=submit] {
+        padding: 3px 4px;
+        width: 58px;
+      }
+
+      #remove_column { margin-left: 0; }
+
+      #add_column input[type=text] { width: 120px; }
+
+      #dt_text { width: 65px !important; }
+      #update_field { float: right; }
+      /* Space betweens update-field area inputs */
+      #update_field input,
+      #update_field select {
+        margin-right: 5px;
+      }
+
+      /* A PLUS - submit button, in which you'll create new rows */
+      #add_row_input {
+        margin-top: 3px;
+        border-radius: 5px;
+        padding: 3px 5px;
+      }
+
+      /* Remove last <hr> line in the main element */
+      main hr:last-child {
+        display: none;
+      }
+/*
+|==============================================================================|
+|=======================       TABLE SETTINGS    ==============================|
+|==============================================================================|
+*/
+
+/* Database printing table modifications */
+.db_table {
+  text-align: left;
+  border-collapse: collapse;
+}
+  /* Additional changes inside the table */
+  .db_table th {
+    background-color: gray;
+    color: white;
+  }
+  .db_table td {
+    height: 20px;
+    background-color: white;
+  }
+  .db_table th, td {
+    border: 1px solid black;;
+    padding: 5px;
+  }
+
+/* Clear database modifications */
+#empty_table, #empty_table tr, #empty_table th, #empty_table td {
+  border: none;
+  background-color: initial;
+  color: black;
+  border-collapse: collapse;
+}
+
+/* Table settings for statistics */
+#statistic table {
+  width: 100%;
+  display: block;
+  text-align: center;
+  table-layout: fixed;
+}
+  /* Additional settings for <th> - tag */
+  #statistic th {
+    width: 25%;
+  }
+  /* Additional settings for <td> - tag */
+  #statistic td {
+    background-color: #6162af;
+    padding: 10px;
+    color: white;
+  }
+  /* Additional settings for <tr> - tag */
+  #statistic tr {
+    border: 1px solid black;
+  }
+
+
+
+/*
+|==============================================================================|
+|=======================     ASIDE (RIGHT SIDE)  ==============================|
+|==============================================================================|
+*/
+*
+/* Some changes to right side of the program. Includes all elements which have
+the same class */
+.aside {
+  border: 5px double black;
+  width: 18%;
+  float: right;
+  background-color: #d6e2dd;
+  padding: 10px;
+  margin: 0.5% 0.5% 0% 0;
+}
+
+
+  /* Fixed height for the Table-maker element */
+  .aside#add_table {
+    position: relative;
+    height: 409px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    word-wrap:break-word;
+  }
+  /* Absolutely position the auto-increment text */
+  .aside#add_table #auto_increment_label {
+    position: absolute;
+    top: 101px; right: 62px;
+    font-size: 13.5px;
+  }
+    /* Some changes to Table-maker element text-input */
+    #add_table input[type=text] {
+      width: 95px;
+    }
+
+  /* Some changes to key columns. */
+  #key_column input[type=text] {
+    background-color: #6162af;
+    color: white;
+    border: none;
+    padding: 3px 2px;
+  }
+      /* New text colour for the placeholder text inside key column */
+      #key_column input[type=text]::placeholder {
+        color: white;
+      }
+
+      /* When focused over key column input area(s) */
+      #key_column input[type=text]:focus {
+        background-color: white;
+        color: black;
+      }
+
+  /* Move the whole table a bit upper in Table-maker element */
+  #add_table #empty_table {
+    margin-top: -15px;
+  }
+
+  /* Changes to Table-maker's submit inputs */
+  #add_table input[type=submit] {
+    padding: 2.4px 3px;
+    width: 97px;
+  }
+
+  /* Error message "your query" in a different font */
+  .sql_code {
+    font-family: Courier New;
+  }
+
+  /* Fixed height for multifunctional forms */
+  .aside#multifunctional {
+    height: 91.5px;
+  }
+
+    /* Changes to all of the buttons */
+    .multi_button, .disabled_button {
+      padding: 10px 5px;
+      width: 160px;
+      text-align: center;
+    }
+
+
+  /* Some changes to the box which contains author's name and logos */
+  .aside#author {
+    height: 93px;
+  }
+      .aside#author p {
+        margin-top: 3px;
+      }
+      /* Some extra settings for the last modified - text */
+      #author #lastModified {
+        font-size: .75em;
+        font-family: Courier;
+        font-style: italic;
+      }
+
+
+
+/*
+|==============================================================================|
+|=========================       SCROLLBAR    =================================|
+|==============================================================================|
+*/
+*
+/* Width */
+::-webkit-scrollbar {
+    width: 7px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+    background: none;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #325d80;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #141a70;
+}
