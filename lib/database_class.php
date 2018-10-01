@@ -815,12 +815,14 @@
                   WHERE table_name='$table' AND column_name='$column'
                   AND $condition;";
 
-        if (mysqli_num_rows(mysqli_query($this->connection, $query)) > 0) {
-          return true;
-        }
-        else {
-          return false;
-        }
+        return (mysqli_num_rows($this->connection, $query) > 0 ? true : false);
+        //
+        // if (mysqli_num_rows(mysqli_query($this->connection, $query)) > 0) {
+        //   return true;
+        // }
+        // else {
+        //   return false;
+        // }
       }
 
 

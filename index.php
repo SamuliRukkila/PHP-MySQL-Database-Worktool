@@ -48,7 +48,7 @@ require_once 'lib/database_class.php';
   <head>
     <meta charset='utf-8'>
     <link rel='stylesheet' href='styles/styles.css'>
-    <script type='text/javascript' src='library/recoverdivscroll.js'></script>
+    <script type='text/javascript' src='lib/recoverdivscroll.js'></script>
     <title>Database-Program</title>
   </head>
   <body>
@@ -134,7 +134,7 @@ require_once 'lib/database_class.php';
 
       If search-session variable will be set, it'll instead print the search
       query. If you hide the database while being in search-session, the hide-session
-      will be removed automatically.-->asdasd1
+      will be removed automatically.-->
       <main id='main'>
         <?php
           if (isset($_SESSION['database'])) { ?>
