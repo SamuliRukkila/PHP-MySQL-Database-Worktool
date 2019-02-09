@@ -22,6 +22,7 @@ mass-create databases -system!
 ## Pictures from the program running
 
 ![Example picture 1](pictures/example1.png?raw=true "Example 1")
+------
 ![Example picture 2](pictures/example2.png?raw=true "Example 2")
 
 ### NOTE
