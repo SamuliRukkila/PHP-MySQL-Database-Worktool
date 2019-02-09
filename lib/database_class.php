@@ -608,8 +608,7 @@
           unset($_SESSION['table_warning']);
           header('Location: '.$_SERVER['PHP_SELF']);
         }
-        elseif (isset($_POST['confirm_error']))
-        {
+        elseif (isset($_POST['confirm_error'])) {
           unset($_SESSION['warning_message']);
           header('Location: '.$_SERVER['PHP_SELF']);
         }
@@ -815,14 +814,10 @@
                   WHERE table_name='$table' AND column_name='$column'
                   AND $condition;";
 
-        return (mysqli_num_rows($this->connection, $query) > 0 ? true : false);
-        //
-        // if (mysqli_num_rows(mysqli_query($this->connection, $query)) > 0) {
-        //   return true;
-        // }
-        // else {
-        //   return false;
-        // }
+        if (mysqli_num_rows(mysqli_query($this->connection, $query)) > 0) {
+          return 1;
+        }
+        return 0;
       }
 
 
