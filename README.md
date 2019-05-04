@@ -2,6 +2,11 @@
 
 This project was made with HTML5, CSS, Javascript and PHP.
 
+### NOTE
+
+**I strongly advice to keep the program in `safe-mode`. Without it you
+are able to do some serious damage to your databases!**
+
 ## How to use
 
 Go to `lib/database_class.php` and change `mysqli_connect()`-values according to your account
@@ -24,8 +29,3 @@ mass-create databases -system!
 ![Example picture 1](pictures/example1.png?raw=true "Example 1")
 ------
 ![Example picture 2](pictures/example2.png?raw=true "Example 2")
-
-### NOTE
-
-**I strongly advice to keep the program in `safe-mode`. Without it you
-are able to do some serious damage to your databases!**
